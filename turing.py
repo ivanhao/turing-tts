@@ -23,7 +23,7 @@ def getToken():
 	return dic_json['access_token']
 def getFile(text):
 	global cuid
-	$token = getToken()
+	token = getToken()
 	url = 'http://tsn.baidu.com/text2audio?tex=' + text + '&lan=zh&per=1&spd=5&cuid=' + cuid + '&ctp=1&tok=' + $token
 	save_to_file('voice.wav', getHtml(url))
 	
