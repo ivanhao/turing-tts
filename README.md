@@ -1,0 +1,12 @@
+#This is base on debain or ubuntu.
+##need to install mpg123:
+```
+sudo apt-get install mpg123
+```
+##need to install pip and simplejson:
+```
+sudo apt-get install python-pip
+
+sudo pip install simplejson
+```
+
