@@ -18,7 +18,7 @@ def getToken():
 	return dic_json['access_token']
 d = open('hello.wav', 'rb').read()
 token = getToken()
-data = {
+jd = {
     #"format": "pcm",
     "format": "wav",
     "rate": 8000,
@@ -28,7 +28,7 @@ data = {
     "len": len(d),
     "speech": base64.encodestring(d).replace('\n', '')
 }
-result = requests.post('http://vop.baidu.com/server_api', json=data, headers={'Content-Type': 'application/json'})
+result = requests.post('http://vop.baidu.com/server_api', data=jd, headers={'Content-Type': 'application/json'})
 data_result = result.json()
 print data_result['err_msg']
 if data_result['err_msg']=='success.':
