@@ -28,13 +28,13 @@ def getToken():
 def getFile(text):
 	global cuid
 	token = getToken()
-	print text
-	url = 'http://tsn.baidu.com/text2audio?tex=' + text + '&lan=zh&per=1&spd=5&cuid=' + cuid + '&ctp=1&tok=' + token
+	#print text
+	url = 'http://tsn.baidu.com/text2audio?tex=' + text + '&lan=zh&per=4&spd=5&cuid=' + cuid + '&ctp=1&tok=' + token
 	#save_to_file('voice.wav', getHtml(url))
-	#c = "wget \"%s\" -O \"%s\"" % (url, "voice.mp3")
-	#os.system(c.encode('utf-8'))
-	os.popen('mpg123 "%s" > /dev/null' %(url)).read()
-	#os.system('mpg123 "%s" > /dev/null' %(url)) 
+	#os.popen('mpg123 "%s" > /dev/null' %(url)).read()
+	os.system('mpg123 -q -s -w voice.wav "%s"' %(url)) 
+	os.system('aplay -q voice.wav')
+	#os.system('mpg123 -q "%s"' %(url)) 
 	
 
 if __name__ == '__main__':
