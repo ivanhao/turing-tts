@@ -1,13 +1,26 @@
 #-*- coding: utf-8 -*-
 import base64, requests
-d = open('testxf.pcm', 'rb').read()
+import simplejson
+import os
+Client_Id = 'WsWs6yVQcHAcHUFr0uRPxngu'
+Client_Secret = 'qApo0sCYLy0sRxPRCUZ43w02a06zIGn0'
+cuid = '9eoiqwe023'
+def getToken():
+	global Client_Id
+	global Client_Secret
+	url = 'https://openapi.baidu.com/oauth/2.0/token?grant_type=client_credentials&client_id=' + Client_Id + '&client_secret=' + Client_Secret
+	response = getHtml(url)
+	dic_json = simplejson.loads(response)
+	return dic_json['access_token']
+d = open('hello.wav', 'rb').read()
+token = getToken()
 data = {
-    "format": "pcm",
-    # "format": "wav",
-    "rate": 16000,
+    #"format": "pcm",
+    "format": "wav",
+    "rate": 8000,
     "channel": 1,
-    "token": "your token",
-    "cuid": "9eoiqwe023",
+    "token": token,
+    "cuid": cuid,
     "len": len(d),
     "speech": base64.encodestring(d).replace('\n', '')
 }
