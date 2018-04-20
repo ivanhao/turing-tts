@@ -6,7 +6,7 @@ sudo apt-get install mpg123
 ```
 ## need to install pip and simplejson:
 ```
-sudo apt-get install python-pip,python-requests
+sudo apt-get install python-pip,python-requests,python-yaml
 
 sudo pip install simplejson
 ```
