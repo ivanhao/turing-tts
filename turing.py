@@ -33,8 +33,8 @@ def getFile(text):
 	#save_to_file('voice.wav', getHtml(url))
 	#c = "wget \"%s\" -O \"%s\"" % (url, "voice.mp3")
 	#os.system(c.encode('utf-8'))
-	#os.popen('mpg123 "%s"' %(url)).read()
-	os.system('mpg123 "%s"' %(url))
+	os.popen('mpg123 "%s" > /dev/null' %(url)).read()
+	#os.system('mpg123 "%s" > /dev/null' %(url)) 
 	
 
 if __name__ == '__main__':
