@@ -5,6 +5,10 @@ import os
 Client_Id = 'WsWs6yVQcHAcHUFr0uRPxngu'
 Client_Secret = 'qApo0sCYLy0sRxPRCUZ43w02a06zIGn0'
 cuid = '9eoiqwe023'
+def getHtml(url):
+	page = urllib.urlopen(url)
+	html = page.read()
+	return html
 def getToken():
 	global Client_Id
 	global Client_Secret
