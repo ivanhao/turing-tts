@@ -30,9 +30,9 @@ def speak(text):
 	token = getToken()
 	#print text
 	url = 'http://tsn.baidu.com/text2audio?tex=' + text + '&lan=zh&per=4&spd=5&cuid=' + cuid + '&ctp=1&tok=' + token
-	#save_to_file('voice.wav', getHtml(url))
+	#save_to_file('output.wav', getHtml(url))
 	#os.popen('mpg123 "%s" > /dev/null' %(url)).read()
-	os.system('mpg123 -q -s -w voice.wav "%s"' %(url)) 
+	os.system('mpg123 -q -s -w output.wav "%s"' %(url)) 
 	os.system('aplay -q output.wav')
 	#os.system('mpg123 -q "%s"' %(url)) 
 	
