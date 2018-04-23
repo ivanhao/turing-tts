@@ -48,6 +48,7 @@ if __name__ == '__main__':
 			res = yaml.safe_load(vop2.use_cloud(token))
 			if res['err_no'] == 0 :
 				text = res['result'][0].encode('utf-8')
+				print 'Me: ' + text
 				request = api + text
 				response = getHtml(request)
 				dic_json = json.loads(response)

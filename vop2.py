@@ -26,7 +26,7 @@ def dump_res(buf):
   
 ## post audio to server  
 def use_cloud(token):  
-    fp = wave.open('hello.wav', 'rb')  
+    fp = wave.open('input.wav', 'rb')  
     nf = fp.getnframes()  
     f_len = nf * 2  
     audio_data = fp.readframes(nf)  
